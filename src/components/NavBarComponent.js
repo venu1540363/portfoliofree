@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const NavBarComponent = () => {
   const theme = useTheme();
@@ -112,7 +113,7 @@ const NavBarComponent = () => {
         sx={{
           "& .MuiDrawer-paper": {
             width: "100%",
-            backgroundColor: "#3f51b5",
+            backgroundColor: "#212A31",
             color: "white",
             height: "100vh",
             display: "flex",
@@ -122,6 +123,18 @@ const NavBarComponent = () => {
           },
         }}
       >
+        {/* Close Icon */}
+        <IconButton
+          onClick={toggleDrawer}
+          sx={{
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            color: "white",
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
         <List>
           {navItems.map((section) => (
             <ListItem button key={section}>
